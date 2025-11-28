@@ -41,12 +41,10 @@ function App() {
             Ein ikonisches Stück Pop-Art-Geschichte in Ihrer Küche! Diese
             klassische Campbell's Tomatensuppe bringt nicht nur kulinarische
             Genüsse, sondern auch ein Stück kulturelles Erbe auf Ihren Tisch.
-            Inspiriert von Andy Warhols legendärem Werk "Campbell's Soup Cans"
-            aus dem Jahr 1962, das die Konsumkultur revolutionierte und die
-            Suppendose zu einem Symbol der Pop-Art machte. Jede Dose ist ein
-            Statement – ob als künstlerische Hommage oder einfach als köstliche
-            Mahlzeit. Genießen Sie die perfekte Balance aus Tradition und
-            zeitlosem Design, genau wie Warhol es einst verewigt hat.
+            Sie inspirierte Andy Warhols zu seinem legendärem Werk "Campbell's
+            Soup Cans" aus dem Jahr 1962, das die Konsumkultur revolutionierte
+            und die Suppendose zu einem Symbol der Pop-Art machte. Jede Dose ist
+            ein Statement.
             <br />
             <br />
             <small>
