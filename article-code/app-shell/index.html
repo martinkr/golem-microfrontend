@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Microfrontend App Shell</title>
+    <style>
+      iframe {
+        width: 100%;
+        border: none;
+      }
+      #header {
+        height: 80px;
+      }
+      #content {
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="header" src="http://localhost:5001/index.html"></iframe>
+    <iframe id="content" src="http://localhost:5002/index.html"></iframe>
+
+    <script>
+      const headerFrame = document.getElementById("header");
+      const contentFrame = document.getElementById("content");
+
+      window.addEventListener("message", (event) => {
+        if (
+          !["http://localhost:5001", "http://localhost:5002"].includes(
+            event.origin
+          )
+        )
+          return;
+
+        const msg = event.data;
+
+        // Nachricht vom Content-Microfrontend erhalten
+        if (msg.type === "cart:update") {
+          headerFrame.contentWindow.postMessage(msg, "http://localhost:5001");
+        }
+
+        // Nachricht an Header-Microfrontend senden
+        if (msg.type === "cart:request") {
+          contentFrame.contentWindow.postMessage(msg, "http://localhost:5002");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Content-Microfrontend</title>
+  </head>
+  <body>
+    <h3>Inhalt</h3>
+    <button onclick="add()">Hinzufügen</button>
+    <button onclick="remove()">Entfernen</button>
+
+    <script>
+      let count = 0;
+      // Nachrichten an den Host senden
+      function updateHeader() {
+        parent.postMessage({ type: "cart:update", count }, "*");
+      }
+
+      function add() {
+        count++;
+        updateHeader();
+      }
+
+      function remove() {
+        count = Math.max(0, count - 1);
+        updateHeader();
+      }
+    </script>
+  </body>
+</html>

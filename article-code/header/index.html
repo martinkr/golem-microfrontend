@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Header-Microfrontend</title>
+  </head>
+  <body>
+    <h3>Header</h3>
+    <p>Produkte im Warenkorb: <span id="count">0</span></p>
+
+    <script>
+      // Nachrichten vom Host empfangen
+      window.addEventListener("message", (event) => {
+        if (event.data.type === "cart:update") {
+          document.getElementById("count").textContent = event.data.count;
+        }
+      });
+    </script>
+  </body>
+</html>

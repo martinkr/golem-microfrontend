@@ -1,0 +1,14 @@
+{
+  "name": "surge-sh-microfrontend",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run build:vue && npm run build:react",
+    "build:vue": "cd header-vue && npm install --verbose  && npm run build",
+    "build:react": "cd content-react && npm install --verbose  && npm run build",
+    "serve": "node serve.js",
+    "install:all": "cd header-vue && npm install --verbose  && cd ../content-react && npm install --verbose "
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

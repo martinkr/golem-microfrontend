@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+header-vue/node_modules/
+content-react/node_modules/
+
+# Build outputs
+header-vue/dist/
+content-react/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+CNAME
+.npmrc
