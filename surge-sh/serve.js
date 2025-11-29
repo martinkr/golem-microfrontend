@@ -29,25 +29,25 @@ if (!fs.existsSync(vueDist) || !fs.existsSync(reactDist)) {
 
 function startServers() {
   console.log("Starting servers...");
-  console.log("Serving header-vue on http://localhost:3101");
-  console.log("Serving content-react on http://localhost:3102");
-  console.log("Serving app-shell on http://localhost:31000");
-  console.log("Open http://localhost:3100/app-shell/index.html\n");
+  console.log("Serving header-vue on http://localhost:3001");
+  console.log("Serving content-react on http://localhost:3002");
+  console.log("Serving app-shell on http://localhost:3000");
+  console.log("Open http://localhost:3000/app-shell/index.html\n");
 
-  // Start header-vue on port 3101
+  // Start header-vue on port 3001
   const headerServer = spawn(
     "npx",
-    ["serve", "-l", "3101", path.join(__dirname, "header-vue", "dist")],
+    ["serve", "-l", "3001", path.join(__dirname, "header-vue", "dist")],
     {
       stdio: "inherit",
       shell: true,
     }
   );
 
-  // Start content-react on port 3102
+  // Start content-react on port 3002
   const contentServer = spawn(
     "npx",
-    ["serve", "-l", "3102", path.join(__dirname, "content-react", "dist")],
+    ["serve", "-l", "3002", path.join(__dirname, "content-react", "dist")],
     {
       stdio: "inherit",
       shell: true,
