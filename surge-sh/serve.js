@@ -19,7 +19,7 @@ if (!fs.existsSync(vueDist) || !fs.existsSync(reactDist)) {
     if (code === 0) {
       startServers();
     } else {
-      console.error("❌ Build failed");
+      console.error("Build failed");
       process.exit(1);
     }
   });
