@@ -81,8 +81,8 @@ surge-sh/
 
    This starts three servers:
 
-   - Header microfrontend on `http://localhost:5001`
-   - Content microfrontend on `http://localhost:5002`
+   - Header microfrontend on `http://localhost:3001`
+   - Content microfrontend on `http://localhost:3002`
    - App shell on `http://localhost:3000`
 
 5. **Open in browser**:
@@ -119,7 +119,7 @@ The project uses a structured message passing system:
 3. **App shell validates origin** and forwards message to header iframe:
    ```javascript
    if (msg.type === "cart:update") {
-     headerFrame.contentWindow.postMessage(msg, "http://localhost:5001");
+     headerFrame.contentWindow.postMessage(msg, "http://localhost:3001");
    }
    ```
 4. **Header receives message** and updates the counter:
@@ -135,7 +135,7 @@ The app shell implements origin validation to ensure messages only come from tru
 
 ```javascript
 if (
-  !["http://localhost:5001", "http://localhost:5002"].includes(event.origin)
+  !["http://localhost:3001", "http://localhost:3002"].includes(event.origin)
 ) {
   return;
 }

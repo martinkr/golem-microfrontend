@@ -43,13 +43,14 @@
       <iframe
         id="header-frame"
         class="header-frame"
-        src="http://localhost:3001"
+        src="https://microfrontend-vue.surge.sh"
         title="Header"
       ></iframe>
       <iframe
         id="content-frame"
         class="content-frame"
-        src="http://localhost:3002"
+        src="https://microfrontend-react.surge.sh"
+"
         title="Product"
       ></iframe>
     </div>
@@ -60,9 +61,10 @@
 
       window.addEventListener("message", (event) => {
         if (
-          !["http://localhost:3001", "http://localhost:3002"].includes(
-            event.origin
-          )
+          ![
+            "https://microfrontend-vue.surge.sh",
+            "https://microfrontend-react.surge.sh",
+          ].includes(event.origin)
         )
           return;
 
@@ -70,12 +72,18 @@
 
         // Nachricht vom Content-Microfrontend erhalten
         if (msg.type === "cart:update") {
-          headerFrame.contentWindow.postMessage(msg, "http://localhost:3001");
+          headerFrame.contentWindow.postMessage(
+            msg,
+            "https://microfrontend-vue.surge.sh"
+          );
         }
 
         // Nachricht an Header-Microfrontend senden
         if (msg.type === "cart:request") {
-          contentFrame.contentWindow.postMessage(msg, "http://localhost:3002");
+          contentFrame.contentWindow.postMessage(
+            msg,
+            "https://microfrontend-react.surge.sh"
+          );
         }
       });
     </script>
