@@ -70,7 +70,9 @@ function App() {
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
             </button>
-            <span className="quantity-display">{count}</span>
+            <span className="quantity-display" data-testid="product-quantity">
+              {count}
+            </span>
             <button
               className="action-button add-button"
               onClick={add}
